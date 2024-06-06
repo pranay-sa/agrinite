@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Website</title>
+  <style>
+    * {
+      padding: 0;
+    }
+    .space {
+      text-align: center;
+    }
+    body {
+      display: flex;
+      background-image: linear-gradient(to top right, lightgreen, lightblue);
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+    }
+    .text {
+      color: maroon;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    h2 {
+      text-align: center;
+    }
+    .box {
+      border: 1px solid gray;
+      margin: auto;
+      margin-top: 20vh;
+      padding: 15px;
+      width: 350px;
+      background-color: rgba(255, 255, 255, 0.6);
+      box-shadow: 10px 10px 5px;
+    }
+    p {
+      color: red;
+      font-weight: bolder;
+    }
+    .rnow {
+      background-color: black;
+      color: white;
+      margin-top: 8px;
+      font-weight: bold;
+      padding: 5px 8px;
+      border-radius: 10px;
+      margin-top: 20px;
+      transition: 1s;
+    }
+    .rnow:hover{
+      background-color: lightgreen;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+<section class="box">
+  <form class="text" id="registrationForm" method="post" action="databasedb.php">
+    <h2>SIGN IN</h2>
+    <p>*All fields are mandatory</p>
+    <div class="space">
+      <label for="name">Name:&emsp;&emsp;</label>
+      <input type="text" id="name" required><br>
+      <label for="password">Password:&ensp;</label>
+      <input type="password" id="password" placeholder=">6 characters with 1 special character" required><br>
+      <label for="email">Email:&emsp;&emsp;&nbsp;</label>
+      <input type="email" id="email" required><br>
+      <label for="phone">Phone number:</label>
+      <input type="tel" id="phone" placeholder="10 digits only" required><br>
+
+      <p>Gender</p>
+      <input type="radio" name="gender">
+      <label for="gender">Male</label>
+      <input type="radio" name="gender">
+      <label for="female">Female</label>
+      <br><label for="DOB">Date of birth</label>
+      <input type="date" name="DOB"><br>
+    <button type="submit" class="rnow">Sign In</button> <!-- Removed the <a> tag -->
+  </form>
+</section>
+<script>
+  document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var password = document.getElementById('password').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    if (name.length < 6 || !name.match(/^[a-zA-Z ]+$/)) {
+      alert('Name should contain alphabets and the length should not be less than 6 characters.');
+      return;
+    }
+    if (password.length < 6) {
+      alert('Password should not be less than 6 characters in length.');
+      return;
+    }
+    if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+      alert('Invalid email address.');
+      return;
+    }
+    if (!phone.match(/^\d{10}$/)) {
+      alert('Phone number should contain exactly 10 digits.');
+      return;
+    }
+    window.location.href = "index1.html";
+  });
+</script>
+
+</body>
+</html>

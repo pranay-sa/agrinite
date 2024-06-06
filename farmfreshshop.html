@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <style>
+    body {
+        width: 100%;
+        background-image: linear-gradient(to top right, lightgreen, lightblue);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      @font-face {
+        font-family: jaldi;
+        src: url(jaldi-regular-webfont.woff);
+      }
+      a {
+        text-decoration: none;
+      }
+      #logo {
+        position: absolute;
+        left: 5%;
+      }
+      .flex-wrap {
+        background-color: black;
+        list-style: none;
+        display: flex;
+        padding: 10px;
+        justify-content: center;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 5;
+      }
+      .navbar ul li {
+        margin: 0 20px;
+      }
+      .navbar{
+        width: 100vh;
+        padding: 0;
+        margin: 0;
+      }
+      #navtext {
+        color: white;
+        padding: 3px;
+        border-radius: 5px;
+        font-size: 1.4rem;
+      }
+      #navtext:hover {
+        background-color: lightgreen;
+        transition: 0.7s;
+      }
+      .dropdown {
+        display: inline-block;
+        position: absolute;
+        right: 10%;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 8px 12px;
+        text-decoration: none;
+        display: block;
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+      }
+      #log{
+        margin-top: 10px;
+        height: 20px;
+      }
+      *{
+        font-family: jaldi;
+      }
+      .card {
+        margin: 20px;
+      }
+      #seemore {
+        color: white;
+        background-color: black;
+        border-radius: 10px;
+        margin: 20px auto;
+        padding: 2px 10px;
+        text-align: center;
+        display: block;
+        transition: background-color 0.8s;
+        font-size: larger;
+      }
+      #seemore:hover {
+        background-color: lightgreen;
+        color: black;
+      }
+      .innerbtn{
+        background-color: lightgreen;
+        padding: 2px 5px;
+        transition: background-color 0.3s;
+      }
+      .innerbtn:hover{
+        background-color: black;
+        color: white;
+      }
+      img:hover{
+        opacity: 0.8;
+        transition: 1s;
+      }
+      .hide{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+        <ul class="flex-wrap">
+          <img src="#" id="logo"/ width="100px">
+          <li><a href="index.html" id="navtext">Home</a></li>
+          <li><a href="" id="navtext">About Us</a></li>
+          <li><a href="shop.html" id="navtext">Farm Fresh Shop</a></li>
+          <li><a href="" id="navtext">Services</a></li>
+          <li><a href="farmfreshshop.html" id="navtext">Invest</a></li>
+          <li><a href="#section3" id="navtext">Contact Us</a></li>
+          <li id="right">
+            <div class="dropdown">
+              <button><img src="profile.png" width="30px"/></button>
+              <div class="dropdown-content">
+                <a href="#">Welcome Pranay</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    <section>
+        <div class="card-deck">
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming1.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Green Farms, Bengaluru</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming2.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Blue Farms, Vellore</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming3.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Red Farms, Raichur</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+          </div>          
+          <div class="card-deck">
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming3.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Blue Farms, Vellore</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming1.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">yellow farms,hyd</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming2.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Blue Farms, Vellore</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-deck">
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming1.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">orange Farms, Delhi</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming3.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">purple farms,Pune</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming2.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Blue Farms, Vellore</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-deck">
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming2.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Flax Farms, Mumbai</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming1.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Blue Farms, Vellore</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming3.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Nord Farms, Nagpur</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="card-deck">
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming3.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Blue Farms, Vellore</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming2.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Nord Farms, Nagpur</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming1.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Blue Farms, Vellore</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+          </div>                    
+      <div class="hide" id="extra">
+        <div class="card-deck">
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming1.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Blue Farms, Vellore</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming3.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Blue Farms, Vellore</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming2.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Blue Farms, Vellore</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="card-deck">
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming1.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Blue Farms, Vellore</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming3.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Blue Farms, Vellore</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+            <div class="card">
+              <a href="#"><img class="card-img-top" src="farming2.jpg" alt="farmerimg" /></a>
+              <div class="card-body">
+                <h5 class="card-title">Blue Farms, Vellore</h5>
+                <p class="card-text">
+                  Crop : <span id="crop"></span><br>
+                  Expected Returns (6mo) : <span id="expr"></span><br>
+                  Farmer has delivered <span id="perc"></span> % Accuracy previously
+                </p>
+                <a href="investcore.html"><button class="btn innerbtn">Invest!</button></a>
+              </div>
+            </div>
+          </div>
+      </div>
+      <button id="seemore">See More</button>
+    </section>
+    <script>
+        document.querySelector('#seemore').addEventListener('click',function() { 
+            document.querySelector('#extra').classList.remove('hide');
+        })
+    </script>
+  </body>
+</html>

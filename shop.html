@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Card Slider</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+    />
+    <style>
+      *{
+        margin: 0;
+      }
+      body {
+        width: 100%;
+        background-image: linear-gradient(to top right, lightgreen, lightblue);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      @font-face {
+        font-family: jaldi;
+        src: url(jaldi-regular-webfont.woff);
+      }
+      .slider-container {
+        width: 80%;
+        margin: 0 auto;
+        font-family: jaldi;
+      }
+      .slider {
+        margin: 0 auto;
+      }
+      .card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 0 10px;
+        text-align: center;
+      }
+      .slick-dots {
+        text-align: center;
+      }
+      .slick-dots li {
+        display: inline-block;
+        margin: 0 5px;
+      }
+      .slick-dots li button {
+        font-size: 12px;
+        line-height: 1;
+        display: block;
+        padding: 5px;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: #fff;
+      }
+      .slick-dots li.slick-active button {
+        background-color: #333;
+        color: #fff;
+      }
+      .card img {
+        display: block;
+        margin: 0 auto;
+        width: 80px;
+      }
+      span{
+        font-weight: 800;
+        color: red;
+      }
+      a {
+        text-decoration: none;
+      }
+      #logo {
+        position: absolute;
+        left: 5%;
+      }
+      .flex-wrap {
+        background-color: black;
+        list-style: none;
+        display: flex;
+        padding: 10px;
+        justify-content: center;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 5;
+      }
+      .navbar ul li {
+        margin: 0 20px;
+      }
+      #navtext {
+        color: white;
+        padding: 3px;
+        border-radius: 5px;
+        font-size: 1.4rem;
+      }
+      #navtext:hover {
+        background-color: lightgreen;
+        transition: 0.7s;
+      }
+      .dropdown {
+        display: inline-block;
+        position: absolute;
+        right: 10%;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 8px 12px;
+        text-decoration: none;
+        display: block;
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+      }
+      #slide1{
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="flex-wrap">
+        <img src="#" id="logo"/ width="100px">
+        <li><a href="index.html" id="navtext">Home</a></li>
+        <li><a href="" id="navtext">About Us</a></li>
+        <li><a href="#shop" id="navtext">Farm Fresh Shop</a></li>
+        <li><a href="" id="navtext">Services</a></li>
+        <li><a href="farmfreshshop.html" id="navtext">Invest</a></li>
+        <li><a href="#section3" id="navtext">Contact Us</a></li>
+        <li id="right">
+          <div class="dropdown">
+            <button><img src="profile.png" width="30px"/></button>
+            <div class="dropdown-content">
+              <a href="#signin.html">Sign In</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="slider-container" id="slide1">
+      <h2>Fruits</h2>
+      <div class="slider">
+        <div class="card">
+          <img src="fruit1.jpg" alt="Fruit 1" />
+          <p>Apple&nbsp;&nbsp;&nbsp;&nbsp;<span>₹150/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="fruit2.jpg" alt="Fruit 2" />
+          <p>Banana&nbsp;&nbsp;&nbsp;&nbsp;<span>₹50/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="fruit3.jpg" alt="Fruit 3" />
+          <p>Orange&nbsp;&nbsp;&nbsp;&nbsp;<span>₹170/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="fruit4.jpg" alt="Fruit 4" />
+          <p>Grapes&nbsp;&nbsp;&nbsp;&nbsp;<span>₹100/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="fruit5.jpg" alt="Fruit 5" />
+          <p>Strawberry&nbsp;&nbsp;&nbsp;&nbsp;<span>₹300/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="fruit6.jpg" alt="Fruit 6" />
+          <p>Watermelon&nbsp;&nbsp;&nbsp;&nbsp;<span>₹120/kg</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slider-container">
+      <h2>Vegetables</h2>
+      <div class="slider">
+        <div class="card">
+          <img src="vegetable1.jpg" alt="Vegetable 1" />
+          <p>Carrot&nbsp;&nbsp;&nbsp;&nbsp;<span>₹50/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="vegetable2.jpg" alt="Vegetable 2" />
+          <p>Broccoli&nbsp;&nbsp;&nbsp;&nbsp;<span>₹40/pc</span></p>
+        </div>
+        <div class="card">
+          <img src="vegetable3.jpg" alt="Vegetable 3" />
+          <p>Spinach&nbsp;&nbsp;&nbsp;&nbsp;<span>₹30/pc</span></p>
+        </div>
+        <div class="card">
+          <img src="vegetable4.jpg" alt="Vegetable 4" />
+          <p>Tomato&nbsp;&nbsp;&nbsp;&nbsp;<span>₹20/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="vegetable5.jpg" alt="Vegetable 5" />
+          <p>Cucumber&nbsp;&nbsp;&nbsp;&nbsp;<span>₹70/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="vegetable6.jpg" alt="Vegetable 6" />
+          <p>Potato&nbsp;&nbsp;&nbsp;&nbsp;<span>₹30/kg</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slider-container">
+      <h2>Grains</h2>
+      <div class="slider">
+        <div class="card">
+          <img src="grain1.jpg" alt="Grain 1" />
+          <p>Rice&nbsp;&nbsp;&nbsp;&nbsp;<span>₹30/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="grain2.jpg" alt="Grain 2" />
+          <p>Wheat&nbsp;&nbsp;&nbsp;&nbsp;<span>₹70/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="grain3.jpg" alt="Grain 3" />
+          <p>Corn&nbsp;&nbsp;&nbsp;&nbsp;<span>₹150/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="grain4.jpg" alt="Grain 4" />
+          <p>Barley&nbsp;&nbsp;&nbsp;&nbsp;<span>₹170/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="grain5.jpg" alt="Grain 5" />
+          <p>Oats&nbsp;&nbsp;&nbsp;&nbsp;<span>₹150/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="grain6.jpg" alt="Grain 6" />
+          <p>Millet&nbsp;&nbsp;&nbsp;&nbsp;<span>₹200/kg</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slider-container">
+      <h2>Agrinite Specials</h2>
+      <div class="slider">
+        <div class="card">
+          <img src="special1.jpg" alt="Special 1" />
+          <p>Quinoa&nbsp;&nbsp;&nbsp;&nbsp;<span>₹250/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="special2.jpg" alt="Special 2" />
+          <p>Chia seeds&nbsp;&nbsp;&nbsp;&nbsp;<span>₹350/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="special3.jpg" alt="Special 3" />
+          <p>Flaxseed&nbsp;&nbsp;&nbsp;&nbsp;<span>₹300/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="special4.jpg" alt="Special 4" />
+          <p>Coconut&nbsp;&nbsp;&nbsp;&nbsp;<span>₹40/pc</span></p>
+        </div>
+        <div class="card">
+          <img src="special5.jpg" alt="Special 5" />
+          <p>Almond&nbsp;&nbsp;&nbsp;&nbsp;<span>₹450/kg</span></p>
+        </div>
+        <div class="card">
+          <img src="special6.jpg" alt="Special 6" />
+          <p>Hazelnut&nbsp;&nbsp;&nbsp;&nbsp;<span>₹550/kg</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="cart"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".slider").slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+              },
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+          ],
+        });
+        
+        var cart = [];
+        updateCartDisplay();
+
+        function updateCartDisplay() {
+          var cartDisplay = "";
+          if (cart.length === 0) {
+            cartDisplay = "Cart is empty";
+          } else {
+            cartDisplay = "<ul>";
+            cart.forEach(function (item) {
+              cartDisplay += "<li>" + item.name + " - ₹" + item.price + "</li>";
+            });
+            cartDisplay += "</ul>";
+          }
+          $("#cart").html(cartDisplay);
+        }
+
+        $(".card").click(function () {
+          var itemName = $(this).data("name");
+          var itemPrice = $(this).data("price");
+          cart.push({ name: itemName, price: itemPrice });
+          updateCartDisplay();
+        });
+      });
+      $(document).ready(function () {
+  $(".slider").slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+    var cart = [];
+  updateCartDisplay();
+
+  function updateCartDisplay() {
+    var cartDisplay = "";
+    if (cart.length === 0) {
+      cartDisplay = "Cart is empty";
+    } else {
+      cartDisplay = "<ul>";
+      cart.forEach(function (item) {
+        cartDisplay += "<li>" + item.name + " - ₹" + item.price + "</li>";
+      });
+      cartDisplay += "</ul>";
+    }
+    $("#cart").html(cartDisplay);
+  }
+
+  $(".card").click(function () {
+    var itemName = $(this).find("p").text().split("₹")[0].trim();
+    var itemPrice = parseFloat($(this).find("p span").text());
+    cart.push({ name: itemName, price: itemPrice });
+    updateCartDisplay();
+  });
+});
+
+    </script>
+  </body>
+</html>

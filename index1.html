@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Agrinite</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: jaldi;
+      }
+      body {
+        width: 100%;
+        background-image: linear-gradient(to top right, lightgreen, lightblue);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      @font-face {
+        font-family: jaldi;
+        src: url(jaldi-regular-webfont.woff);
+      }
+      a {
+        text-decoration: none;
+      }
+      #logo {
+        position: absolute;
+        left: 5%;
+      }
+      .flex-wrap {
+        background-color: black;
+        list-style: none;
+        display: flex;
+        padding: 10px;
+        justify-content: center;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        z-index: 5;
+      }
+      .navbar ul li {
+        margin: 0 20px;
+      }
+      #navtext {
+        color: white;
+        padding: 3px;
+        border-radius: 5px;
+        font-size: 1.4rem;
+      }
+      #navtext:hover {
+        background-color: lightgreen;
+        transition: 0.7s;
+      }
+      .dropdown {
+        display: inline-block;
+        position: absolute;
+        right: 10%;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+      .dropdown-content a {
+        color: black;
+        padding: 8px 12px;
+        text-decoration: none;
+        display: block;
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+      }
+      .slider {
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+      }
+      .slider-image {
+        border-radius: 30px;
+        margin: 20px;
+        width: 100%;
+        height: auto;
+      }
+      .row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 50px;
+      }
+      .col-1-of-3 {
+        flex: 0 0 30%;
+        margin: 0 10px;
+      }
+      .card {
+        position: relative;
+        height: 32rem;
+      }
+      .card__side {
+        height: 32rem;
+        transition: all 0.8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+      }
+      .card__side--front {
+        background-color: #fff;
+      }
+      .card__side--back {
+        transform: rotateY(180deg);
+      }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+      }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+      }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+      }
+      .card:hover .card__side--front {
+        transform: rotateY(-180deg);
+      }
+      .card:hover .card__side--back {
+        transform: rotateY(0);
+      }
+      .card__picture {
+        background-size: cover;
+        height: 17rem;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+      }
+      .card__heading {
+          font-size: 2.5rem; 
+          font-weight: 300;
+          text-align: right;
+          color: #fff;
+          position: absolute;
+          top: 1rem; 
+          right: 1rem; 
+          width: 70%;
+      }
+      .card__heading-span {
+        padding: 1rem 1.5rem;
+      }
+      .card__details {
+        padding: 2rem;
+      }
+      .card__details ul {
+        list-style: none;
+        width: 80%;
+        margin: 0 auto;
+      }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.8rem;
+        padding: 1rem;
+        color: white;
+      }
+      .card__cta {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+      }
+      .card__price-box {
+        text-align: center;
+        color: #fff;
+        margin-bottom: 6rem;
+      }
+      .card__price-only {
+        font-size: 1.2rem;
+      }
+      .card__price-value {
+        font-size: 4rem;
+        font-weight: 100;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+      }
+      .btn:hover::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+      .btn{
+        border-radius: 5px;
+      }
+      .btn--white {
+        background-color: #fff;
+        color: #777;
+      }
+      .btn--white::after {
+        background-color: #fff;
+      }
+
+      .btn--green {
+        background-color: #55c57a;
+        color: #fff;
+      }
+      .btn--green::after {
+        background-color: #55c57a;
+      }
+      .contactus{
+        display: flex;
+      }
+      #sugg{
+        margin-left: 40%;
+      }
+      #log{
+        margin-top: 10px;
+        height: 20px;
+      }
+      #cutext{
+        color: black;
+        font-family: jaldi;
+        font-size: 4em;
+        margin-top: 5%;
+        margin-left: 10%;
+        font-weight: 900;
+      }
+      .contactus{
+        margin-top: -2%;
+        margin-left: 20%;
+      }
+      #contact{
+        color: black;
+        font-size: 1.4rem;
+        margin-bottom: 1.5px;
+      }
+      textarea{
+        opacity: 0.6;
+      }
+      #suggestionbtn{
+        padding: 2px;
+        margin: 5px;
+        margin-left: 20%;
+      }
+      .abtus{
+        margin-top: 50px;
+        margin-left: 80px;
+        font-size: 1.2rem;
+        background-color: lightcoral;
+        border-radius: 50px;
+        padding: 20px;
+        color: white;
+      }
+      .abtustxt{
+        font-size: 3.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="flex-wrap">
+        <img src="#" id="logo"/ width="100px">
+        <li><a href="index.html" id="navtext">Home</a></li>
+        <li><a href="#section2" id="navtext">About Us</a></li>
+        <li><a href="shop.html" id="navtext">Farm Fresh Shop</a></li>
+        <li><a href="" id="navtext">Services</a></li>
+        <li><a href="farmfreshshop.html" id="navtext">Invest</a></li>
+        <li><a href="#section3" id="navtext">Contact Us</a></li>
+        <li id="right">
+          <div class="dropdown">
+            <button><img src="profile.png" width="30px"/></button>
+            <div class="dropdown-content">
+              <a href="#signin.html">Welcome Pranay</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div class="slider">
+      <img class="slider-image" src="PHOTO 1.png" width="800px" />
+      <img
+        class="slider-image"
+        src="PHOTO 2.png"
+        width="800px"
+        style="display: none"
+      />
+      <img
+        class="slider-image"
+        src="PHOTO 3.png"
+        width="800px"
+        style="display: none"
+      />
+    </div>
+    <div class="row">
+      <div class="col-1-of-3">
+        <div class="card">
+          <div class="card__side card__side--front">
+            <div class="card__picture card__picture--1"><img src="PHOTO 1.png"></div>
+            <h4 class="card__heading">
+              <span class="card__heading-span card__heading-span--1"
+                >Now Invest in agriculture</span
+              >
+            </h4>
+            <div class="card__details">
+              <ul>
+                <li>Simple User interface</li>
+                <li>As simple as investing in stocks</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card__side card__side--back card__side--back-1">
+            <div class="card__cta">
+              <div class="card__price-box">
+                <p class="card__price-value">No Minimum Amount</p>
+              </div>
+              <a href="farmfreshshop.html" class="btn btn--white">Know More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-1-of-3">
+        <div class="card">
+          <div class="card__side card__side--front">
+            <div class="card__picture card__picture--2"><img src="fav.png"></div>
+            <h4 class="card__heading">
+              <span class="card__heading-span card__heading-span--2"
+                >The Fresh Farm</span
+              >
+            </h4>
+            <div class="card__details">
+              <ul>
+                <li>Buy Directly From Farmers</li>
+                <li>Customized crop growth to your plate</li>
+                <li>First 3 deliveries free</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card__side card__side--back card__side--back-2">
+            <div class="card__cta">
+              <div class="card__price-box">
+                <p class="card__price-only">NOT FRESH?</p>
+                <p class="card__price-value">100% RETURN</p>
+              </div>
+              <a href="shop.html" class="btn btn--white">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-1-of-3">
+        <div class="card">
+          <div class="card__side card__side--front">
+            <div class="card__picture card__picture--3"><img src="third.png"></div>
+            <h4 class="card__heading">
+              <span class="card__heading-span card__heading-span--3"
+                >Know Your Food!</span
+              >
+            </h4>
+            <div class="card__details">
+              <ul>
+                <li>Connect Directly to the farmer</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card__side card__side--back card__side--back-3">
+            <div class="card__price-box">
+              <p class="card__price-value">GO AGRINITE</p>
+            </div>
+            <div class="card__cta">
+              <a href="#popup" class="btn btn--white">Find out more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section id="section2"></section>
+    <section class="abtus">
+      <h2 class="abtustxt">About Us</h2>
+      <p>Welcome to our farm fresh produce platform! We are dedicated to bringing you the freshest and highest quality produce directly from local farms to your doorstep.</p>
+      <p>Our mission is to support local farmers and promote sustainable agriculture practices. We believe in transparency and traceability, ensuring that you know exactly<br> where your food comes from and how it's grown.</p>
+      <p>Whether you're looking for seasonal fruits, organic vegetables, or specialty crops, we've got you covered. Our team works tirelessly to select the best farms and<br> ensure that only the finest produce makes it to our shelves.</p>
+      <p>Join us in our journey to connect farmers and consumers, and experience the joy of farm-fresh goodness delivered right to your home.</p>
+  </section>
+    <h1 id="cutext">Contact Us</h1><br>
+    <div class="contactus">
+      <section id="lo">
+        <img src="emaillogo.png" id="log"><br>
+        <img src="instalogo.png" id="log"><br>
+        <img src="linkedinlogo.png" id="log"><br>
+        <img src="twitterlogo.png" id="log"><br>
+      </section>
+      <section >
+        <a href="#"><p id="contact">Agrinite@vit.ac.in</p></a>
+        <a href="#"><p id="contact">Agrin.ite</p></a>
+        <a href="#"><p id="contact">Agrinite.linkedin.in</p></a>
+        <a href="#"><p id="contact">Agrinitetweets</p></a>
+      </section>
+    </div>
+  </div>
+  <section id="section3">
+  <form>
+  <div id="sugg">
+    <h2>Drop Down Your Queries/Suggestions</h2>
+    <textarea cols="60" rows="3"></textarea><br>
+    <button id="suggestionbtn">Submit</button>
+  </div>
+</section>
+</form>
+    <script>
+      let currentImageIndex = 0;
+      const images = document.querySelectorAll(".slider-image");
+      function showImage(index) {
+        images.forEach((image, i) => {
+          if (i === index) {
+            image.style.display = "block";
+          } else {
+            image.style.display = "none";
+          }
+        });
+      }
+      function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        showImage(currentImageIndex);
+      }
+      showImage(currentImageIndex);
+      setTimeout(() => {
+        setInterval(nextImage, 3000);
+      }, 5000);
+    </script>
+  </body>
+</html>
